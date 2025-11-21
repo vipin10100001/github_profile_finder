@@ -12,17 +12,21 @@ export default function Favorites() {
     const { data } = await supabase.from("favorites").select("*");
     setFavorites(data);
   };
-
   return (
-    <div>
-      <h2>Favorite Profiles</h2>
-
+    <div className="container">
+      <h2>⭐ Favorite Profiles</h2>
+  
       {favorites?.map((f) => (
-        <div key={f.id} style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
-          <img src={f.avatar} width="40"  alt="Avatar"/>
-          <p>{f.username}</p>
+        <div key={f.id} className="list-card">
+          <div className="list-item">
+            <img src={f.avatar} alt="" />
+            <div>
+              <div style={{ fontWeight: 600 }}>{f.username}</div>
+              <small>{f.followers} followers</small>
+            </div>
+          </div>
         </div>
       ))}
     </div>
   );
-}
+    }  

@@ -1,36 +1,59 @@
 .profile-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    width: 90%;
   }
   
   .profile-header {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
   }
   
   .profile-header img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
   }
   
-  .profile-stats {
-    margin-top: 10px;
+  .profile-info {
+    font-size: 18px;
+  }
+  
+  .profile-username {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  
+  .profile-bio {
+    margin: 10px 0;
+    color: #6b7280;
+  }
+  
+  .stats-row {
+    margin-top: 12px;
     display: flex;
     gap: 20px;
+    color: #374151;
   }
   
-  button {
-    background: #007bff;
+  .favorite-button {
+    margin-top: 20px;
+    background: #2563eb;
     color: white;
-    padding: 8px 14px;
+    padding: 12px 18px;
+    border-radius: 8px;
     border: none;
-    border-radius: 6px;
     cursor: pointer;
-    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .favorite-button:hover {
+    background: #1d4ed8;
   }
   
