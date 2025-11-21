@@ -10,35 +10,40 @@
     font-family: "Inter", Arial, sans-serif;
     color: #1e293b;
     padding-bottom: 40px;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
   }
   
   /* ------------ NAVBAR ------------- */
   nav {
     background: white;
-    padding: 14px 24px;
-    border-radius: 14px;
-    margin-bottom: 25px;
+    padding: 18px 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
     display: flex;
     gap: 24px;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.12);
     border: 1px solid #e2e8f0;
+    font-size: 17px;
   }
   
   nav a {
     text-decoration: none;
     color: #4f46e5;
     font-weight: 600;
-    font-size: 16px;
+    transition: 0.2s ease;
   }
   
   nav a:hover {
-    color: #6366f1;
+    color: #f472b6;
+    transform: translateY(-2px);
   }
   
   /* ------------ PAGE WRAPPER ------------- */
   .container {
     max-width: 900px;
     margin: auto;
+    padding: 0 12px;
   }
   
   /* ------------ SEARCH BAR ------------- */
@@ -46,74 +51,109 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 20px auto;
+    margin: 28px auto 24px auto;
   }
   
   .search-input {
     flex: 1;
-    padding: 14px 16px;
-    border-radius: 12px;
+    padding: 16px 18px;
+    border-radius: 14px;
     border: 2px solid #c7d2fe;
     background: #eef2ff;
     font-size: 17px;
     color: #1e293b;
-    transition: 0.2s ease;
+    transition: all 0.25s ease;
+  }
+  
+  .search-input:hover {
+    background: #e0e7ff;
   }
   
   .search-input:focus {
     outline: none;
     border: 2px solid #6366f1;
     background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
   }
   
   .search-button {
-    padding: 14px 28px;
-    border-radius: 12px;
+    padding: 16px 30px;
+    border-radius: 14px;
     border: none;
     background: linear-gradient(135deg, #6366f1, #f472b6);
     color: white;
     cursor: pointer;
     font-size: 17px;
     font-weight: 700;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
-    transition: 0.15s ease;
+    box-shadow: 0 6px 18px rgba(99, 102, 241, 0.25);
+    transition: 0.2s ease;
   }
   
   .search-button:hover {
-    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(244, 114, 182, 0.35);
   }
   
   /* ------------ LIST CARDS (Favorites + History) ------------- */
   .list-card {
     background: white;
-    padding: 18px;
-    border-radius: 16px;
-    margin-bottom: 14px;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 16px;
     border: 2px solid #c7d2fe;
-    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+    transition: 0.2s ease;
+  }
+  
+  .list-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
   }
   
   .list-item {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
     font-size: 18px;
   }
   
   .list-item img {
-    width: 54px;
-    height: 54px;
-    border-radius: 12px;
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
     border: 3px solid #f472b6;
+    box-shadow: 0 2px 10px rgba(244, 114, 182, 0.25);
   }
   
   /* ------------ HEADINGS ------------- */
-  h1 {
+  h1, h2 {
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 28px;
+    margin-bottom: 12px;
+    font-size: 30px;
     font-weight: 800;
     color: #4f46e5;
+    letter-spacing: -0.5px;
+  }
+  
+  .section-title {
+    margin-top: 20px;
+    margin-bottom: 14px;
+    font-size: 26px;
+    font-weight: 800;
+    color: #4f46e5;
+    text-align: center;
+  }
+  
+  /* ------------ TIME BADGE ------------- */
+  .time-badge {
+    margin-left: auto;
+    padding: 6px 12px;
+    background: #eef2ff;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #4f46e5;
+    font-weight: 600;
+    border: 1px solid #c7d2fe;
   }
   
   /* ------------ RESPONSIVE ------------- */
@@ -121,11 +161,6 @@
     .search-wrapper {
       flex-direction: column;
       width: 90%;
-      margin: auto;
-    }
-  
-    .search-input {
-      width: 100%;
     }
   
     .search-button {
@@ -133,7 +168,7 @@
     }
   
     .profile-card {
-      width: 95%;
+      width: 100%;
     }
   
     .repo-grid {
@@ -142,10 +177,6 @@
   }
   
   @media (min-width: 769px) and (max-width: 1024px) {
-    .search-input {
-      width: 60%;
-    }
-  
     .repo-grid {
       grid-template-columns: repeat(2, 1fr);
     }

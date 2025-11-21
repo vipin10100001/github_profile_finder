@@ -19,14 +19,18 @@ export default function History() {
 
   return (
     <div className="container">
-      <h2>⏱ Search History</h2>
-  
+      <h2 className="section-title">📜 Search History</h2>
+
       {history?.map((h) => (
         <div key={h.id} className="list-card">
-          <div style={{ fontWeight: 600 }}>{h.username}</div>
-          <small style={{ color: "#6b7280" }}>{h.searched_at}</small>
+          <div className="list-item">
+            <div className="list-user">{h.username}</div>
+            <div className="time-badge">
+              {new Date(h.searched_at).toLocaleString()}
+            </div>
+          </div>
         </div>
       ))}
     </div>
   );
-    }  
+}
