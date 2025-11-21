@@ -1,0 +1,36 @@
+/* Skeleton Base */
+.skeleton {
+    background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+    border-radius: 8px;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+  }
+  
+  /* Skeleton Blocks */
+  .skeleton-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+  }
+  
+  .skeleton-line {
+    height: 14px;
+    width: 100%;
+    margin: 6px 0;
+  }
+  
+  .skeleton-small {
+    height: 12px;
+    width: 60%;
+  }
+  
+  .skeleton-repo-card {
+    height: 140px;
+    border-radius: 14px;
+  }
+  
