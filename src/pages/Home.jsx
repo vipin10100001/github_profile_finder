@@ -12,44 +12,50 @@ export default function Home() {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchGitGitHub = async () => {
+  const fetchGitHub = async () => {
     if (!username.trim()) return alert("Enter username");
 
-    const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+    setLoading(true);
+    setProfile(null);
+    setRepos([]);
 
     try {
-      setLoading(true);
-      setProfile(null);
-      setRepos([]);
+      // Fetch user
+      const res = await fetch(`https://api.github.com/users/${username}`);
 
-      
-      const res = await fetch(`https://api.github.com/users/${username}`, {
-        headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
-        },
-      });
+      if (res.status === 404) {
+        alert("User not found");
+        setLoading(false);
+        return;
+      }
 
-      if (!res.ok) throw new Error("User not found");
+      if (res.status === 403) {
+        alert("GitHub API rate limit exceeded. Try again later.");
+        setLoading(false);
+        return;
+      }
 
       const data = await res.json();
       setProfile(data);
 
-      
-      const repoRes = await fetch(data.repos_url, {
-        headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
-        },
-      });
+      // Fetch repos
+      const repoRes = await fetch(data.repos_url);
+
+      if (repoRes.status === 403) {
+        alert("Rate limit exceeded while fetching repositories.");
+        setLoading(false);
+        return;
+      }
 
       const repoData = await repoRes.json();
       setRepos(repoData);
 
-     
+      // Save to Supabase history
       await supabase.from("history").insert({ username });
 
     } catch (err) {
-      console.error("GitHub API error:", err);
-      alert("GitHub API failed. Probably rate limit.");
+      console.error(err);
+      alert("Something went wrong. Check your internet connection.");
     } finally {
       setLoading(false);
     }
@@ -64,10 +70,10 @@ export default function Home() {
       <SearchBar
         username={username}
         setUsername={setUsername}
-        onSearch={fetchGitGitHub}
+        onSearch={fetchGitHub}   // FIXED
       />
 
-      
+      {/* ---- LOADING SKELETONS ---- */}
       {loading && (
         <>
           <SkeletonProfile />
@@ -75,7 +81,7 @@ export default function Home() {
         </>
       )}
 
-      {/* ---- REAL DATA WHEN NOT LOADING ---- */}
+      {/* ---- REAL DATA ---- */}
       {!loading && profile && <ProfileCard profile={profile} />}
       {!loading && repos.length > 0 && <RepoList repos={repos} />}
     </div>
