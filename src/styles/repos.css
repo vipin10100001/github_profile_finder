@@ -1,4 +1,4 @@
-/* -------- REPO GRID -------- */
+
 .repo-grid {
     margin-top: 30px;
     display: grid;
@@ -7,7 +7,7 @@
     padding: 0 10px 50px 10px;
   }
   
-  /* -------- REPO CARD -------- */
+ 
   .repo-card {
     background: white;
     padding: 18px;
@@ -22,7 +22,7 @@
     transform: translateY(-5px);
   }
   
-  /* -------- REPO CONTENT -------- */
+
   .repo-card h3 {
     margin-bottom: 8px;
     font-size: 18px;
@@ -36,7 +36,7 @@
     font-size: 14px;
   }
   
-  /* -------- STARS / LANGUAGE TAGS -------- */
+
   .repo-meta {
     display: flex;
     justify-content: space-between;

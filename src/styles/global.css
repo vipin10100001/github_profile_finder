@@ -1,4 +1,4 @@
-/* ------------ RESET ------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@
     line-height: 1.6;
   }
   
-  /* ------------ NAVBAR ------------- */
+
   nav {
     background: white;
     padding: 18px 30px;
@@ -39,14 +39,14 @@
     transform: translateY(-2px);
   }
   
-  /* ------------ PAGE WRAPPER ------------- */
+
   .container {
     max-width: 900px;
     margin: auto;
     padding: 0 12px;
   }
   
-  /* ------------ SEARCH BAR ------------- */
+ 
   .search-wrapper {
     display: flex;
     justify-content: center;
@@ -94,7 +94,7 @@
     box-shadow: 0 10px 30px rgba(244, 114, 182, 0.35);
   }
   
-  /* ------------ LIST CARDS (Favorites + History) ------------- */
+
   .list-card {
     background: white;
     padding: 20px;
@@ -125,7 +125,6 @@
     box-shadow: 0 2px 10px rgba(244, 114, 182, 0.25);
   }
   
-  /* ------------ HEADINGS ------------- */
   h1, h2 {
     text-align: center;
     margin-bottom: 12px;
@@ -144,7 +143,7 @@
     text-align: center;
   }
   
-  /* ------------ TIME BADGE ------------- */
+
   .time-badge {
     margin-left: auto;
     padding: 6px 12px;
@@ -156,7 +155,7 @@
     border: 1px solid #c7d2fe;
   }
   
-  /* ------------ RESPONSIVE ------------- */
+
   @media (max-width: 768px) {
     .search-wrapper {
       flex-direction: column;

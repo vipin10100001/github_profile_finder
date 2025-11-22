@@ -1,4 +1,4 @@
-/* -------- PROFILE CARD -------- */
+
 .profile-card {
     background: white;
     padding: 28px;
@@ -14,7 +14,6 @@
     transform: translateY(-4px);
   }
   
-  /* -------- AVATAR + HEADER -------- */
   .profile-header {
     display: flex;
     align-items: center;
@@ -29,7 +28,7 @@
     box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
   }
   
-  /* -------- PROFILE INFO -------- */
+
   .profile-username {
     font-size: 26px;
     font-weight: 800;
@@ -48,7 +47,7 @@
     font-size: 15px;
   }
   
-  /* -------- STATS -------- */
+ 
   .stats-row {
     margin-top: 20px;
     display: flex;
@@ -64,7 +63,7 @@
     border: 1px solid #c7d2fe;
   }
   
-  /* -------- FAVORITE BUTTON -------- */
+
   .favorite-button {
     margin-top: 24px;
     padding: 12px 20px;

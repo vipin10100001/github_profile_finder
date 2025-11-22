@@ -22,7 +22,7 @@ export default function Home() {
       setProfile(null);
       setRepos([]);
 
-      // Fetch profile
+      
       const res = await fetch(`https://api.github.com/users/${username}`, {
         headers: {
           Authorization: `token ${GITHUB_TOKEN}`,
@@ -34,7 +34,7 @@ export default function Home() {
       const data = await res.json();
       setProfile(data);
 
-      // Fetch repos
+      
       const repoRes = await fetch(data.repos_url, {
         headers: {
           Authorization: `token ${GITHUB_TOKEN}`,
@@ -44,7 +44,7 @@ export default function Home() {
       const repoData = await repoRes.json();
       setRepos(repoData);
 
-      // Save search to history
+     
       await supabase.from("history").insert({ username });
 
     } catch (err) {
@@ -67,7 +67,7 @@ export default function Home() {
         onSearch={fetchGitGitHub}
       />
 
-      {/* ---- SKELETONS DURING LOADING ---- */}
+      
       {loading && (
         <>
           <SkeletonProfile />
